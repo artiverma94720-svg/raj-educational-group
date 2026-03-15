@@ -29,8 +29,8 @@ const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
 // --- API Helper Function with Exponential Backoff ---
 
 const callGemini = async (userPrompt, systemPrompt) => {
-data.response    const response = await fetch('/api/chat', {
-      data.replymethod: 'POST',
+ const response = await fetch('/api/chat', {
+        method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },

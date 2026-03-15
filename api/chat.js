@@ -29,7 +29,7 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: 'API key not configured' });
     }
 
-    const modelName = "gemini-2.5-flash";
+    const modelName = "gemini-2.0.5-flash";
     const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
 
     const response = await fetch(endpoint, {

@@ -28,7 +28,8 @@ const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
 // --- Gemini API Configuration ---
 // --- API Helper Function with Exponential Backoff ---
 
-const callGemini = async (userPrompt, systemPrompt) => {
+const callGemini = async (userPrompt, systemPrompt)  => {
+    try {
  const response = await fetch('/api/chat', {
         method: 'POST',
       headers: {
@@ -48,7 +49,7 @@ const callGemini = async (userPrompt, systemPrompt) => {
   } catch (error) {
     console.error('AI Chat Error:', error);
     throw error;
-  }
+  }};
 };
   
 // --- Custom CSS Injections for Premium Animations ---

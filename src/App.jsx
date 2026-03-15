@@ -27,26 +27,31 @@ const db = getFirestore(app);
 const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
 
 // --- Gemini API Configuration ---
-const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-const modelName = "gemini-2.5-flash";
-
 // --- API Helper Function with Exponential Backoff ---
-const genAI = new GoogleGenerativeAI(apiKey);
 
 const callGemini = async (userPrompt, systemPrompt) => {
   try {
-    const model = genAI.getGenerativeModel({ 
-      model: modelName,
-      systemInstruction: systemPrompt 
+    const response = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        message: `${systemPrompt}\n\n${userPrompt}`
+      }),
     });
-    const result = await model.generateContent(userPrompt);
-    const response = await result.response;
-    return response.text();
+
+    if (!response.ok) {
+      throw new Error(`API request failed: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data.response;
   } catch (error) {
-    console.error('Gemini API Error:', error);
+    console.error('AI Chat Error:', error);
     throw error;
   }
-};
+};};
   
 // --- Custom CSS Injections for Premium Animations ---
 const CustomStyles = () => (

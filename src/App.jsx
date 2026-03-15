@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Settings, HeartPulse, Activity, FlaskConical, ChevronRight, ChevronDown, Calendar, MapPin, Phone, Mail, ArrowRight, Quote, Trophy, Users, MonitorPlay, Briefcase, Sparkles, Send, Loader2, Bot, CheckCircle2, AlertCircle, LayoutDashboard, Database, Clock, Trash2, Star, ArrowLeft, Facebook, Twitter, Instagram, Linkedin, Check, UserCheck } from 'lucide-react';
-
+import { GoogleGenerativeAI } from '@google/generative-ai';
 // --- Firebase Imports ---
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from 'firebase/auth';
@@ -29,29 +29,24 @@ const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
 // --- Gemini API Configuration ---
 const apiKey = "AIzaSyDNeJMfRaa0TGclMMHFVuxL2DUKzMEPZq0";
 const modelName = "gemini-2.5-flash";
-const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
 
 // --- API Helper Function with Exponential Backoff ---
+const genAI = new GoogleGenerativeAI(apiKey);
+
 const callGemini = async (userPrompt, systemPrompt) => {
-  let delay = 1000;
-  for (let i = 0; i < 5; i++) {
-    try {
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: userPrompt }] }],
-          systemInstruction: { parts: [{ text: systemPrompt }] }
-        })
-      });
-      if (!response.ok) throw new Error('API Error');
-      const data = await response.json();
-      return data.candidates?.[0]?.content?.parts?.[0]?.text || "I'm sorry, I couldn't generate a response.";
-    } catch (error) {
-      if (i === 4) throw error;
-      await new Promise(resolve => setTimeout(resolve, delay));
-      delay *= 2;
-    }
+  try {
+    const model = genAI.getGenerativeModel({ 
+      model: modelName,
+      systemInstruction: systemPrompt 
+    });
+    const result = await model.generateContent(userPrompt);
+    const response = await result.response;
+    return response.text();
+  } catch (error) {
+    console.error('Gemini API Error:', error);
+    throw error;
+  }
+};
   }
 };
 

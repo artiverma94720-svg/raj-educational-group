@@ -27,7 +27,7 @@ const db = getFirestore(app);
 const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
 
 // --- Gemini API Configuration ---
-const apiKey = "AIzaSyDNeJMfRaa0TGclMMHFVuxL2DUKzMEPZq0";
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 const modelName = "gemini-2.5-flash";
 
 // --- API Helper Function with Exponential Backoff ---

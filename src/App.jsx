@@ -49,7 +49,7 @@ const callGemini = async (userPrompt, systemPrompt)  => {
   } catch (error) {
     console.error('AI Chat Error:', error);
     throw error;
-  }};
+  }
 };
   
 // --- Custom CSS Injections for Premium Animations ---

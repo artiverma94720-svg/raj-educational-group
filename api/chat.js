@@ -36,7 +36,7 @@ const modelName = "gemini-2.0-flash";    const endpoint = `https://generativelan
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         contents: [{ parts: [{ text: userPrompt }] }],
-        systemInstruction: systemPrompt ? { parts: [{ text: systemPrompt }] } : undefined
+        system_instruction: systemPrompt ? { parts: [{ text: systemPrompt }] } : undefined
       })
     });
 

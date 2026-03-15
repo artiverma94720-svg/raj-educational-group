@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Settings, HeartPulse, Activity, FlaskConical, ChevronRight, ChevronDown, Calendar, MapPin, Phone, Mail, ArrowRight, Quote, Trophy, Users, MonitorPlay, Briefcase, Sparkles, Send, Loader2, Bot, CheckCircle2, AlertCircle, LayoutDashboard, Database, Clock, Trash2, Star, ArrowLeft, Facebook, Twitter, Instagram, Linkedin, Check, UserCheck } from 'lucide-react';
-import { GoogleGenerativeAI } from '@google/generative-ai';
 // --- Firebase Imports ---
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from 'firebase/auth';

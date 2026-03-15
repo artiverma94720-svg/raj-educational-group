@@ -390,7 +390,7 @@ export default function App() {
       <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled || mobileMenuOpen ? 'bg-[#002147]/95 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,33,71,0.2)] py-3 border-b border-white/10' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <div className="bg-white/95 backdrop-blur-sm px-4 py-2 rounded-2xl shadow-xl h-14 md:h-16 flex items-center cursor-pointer transform hover:scale-105 transition-all duration-300" onClick={() => scrollTo('home')}>
-            <img src="/raj-logo.png" alt="Raj Educational Group Logo" className="h-10 md:h-12 w-auto object-contain" />
+            <img src="/raj-logo.png.png" alt="Raj Educational Group Logo" className="h-10 md:h-12 w-auto object-contain" />
           </div>
           
           <div className="hidden xl:flex space-x-2 items-center bg-white/5 backdrop-blur-md rounded-full px-4 py-1 border border-white/10">
@@ -616,7 +616,7 @@ export default function App() {
               <div className="bg-slate-50 p-10 md:p-14 rounded-[3rem] shadow-sm hover:shadow-[0_20px_50px_rgba(22,163,74,0.15)] transition-all duration-500 transform hover:-translate-y-2 border border-slate-100 flex flex-col items-center text-center group h-full relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 to-green-600"></div>
                 <div className="w-48 h-48 mb-8 p-4 bg-white rounded-[2rem] shadow-md group-hover:scale-105 transition-transform duration-500 group-hover:shadow-xl">
-                  <img src="/rni-logo.png" alt="Raj Nursing Institute Logo" className="w-full h-full object-contain drop-shadow-sm" />
+                  <img src="/rni-logo.png.png" alt="Raj Nursing Institute Logo" className="w-full h-full object-contain drop-shadow-sm" />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-black text-[#002147] mb-4 uppercase tracking-wider">Raj Nursing Institute</h3>
                 <p className="text-slate-600 leading-relaxed font-medium">Providing top-tier nursing education including A.N.M., G.N.M., and B.Sc. Nursing to build compassionate, skilled healthcare professionals.</p>
@@ -628,7 +628,7 @@ export default function App() {
                <div className="bg-slate-50 p-10 md:p-14 rounded-[3rem] shadow-sm hover:shadow-[0_20px_50px_rgba(59,130,246,0.15)] transition-all duration-500 transform hover:-translate-y-2 border border-slate-100 flex flex-col items-center text-center group h-full relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 to-blue-600"></div>
                 <div className="w-48 h-48 mb-8 p-4 bg-white rounded-[2rem] shadow-md group-hover:scale-105 transition-transform duration-500 group-hover:shadow-xl">
-                  <img src="/rcp-logo.png" alt="Raj College of Pharmacy Logo" className="w-full h-full object-contain drop-shadow-sm" />
+                  <img src="/rcp-logo.png.png" alt="Raj College of Pharmacy Logo" className="w-full h-full object-contain drop-shadow-sm" />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-black text-[#002147] mb-4 uppercase tracking-wider">Raj College of Pharmacy</h3>
                 <p className="text-slate-600 leading-relaxed font-medium">Delivering excellence in pharmaceutical education through our D.Pharm and B.Pharm programs to innovate the future of medicine.</p>
@@ -897,7 +897,7 @@ export default function App() {
           <div className="grid md:grid-cols-3 gap-16 mb-20">
             <div>
               <div className="bg-white inline-block px-8 py-4 rounded-[2rem] mb-8 shadow-2xl transform hover:scale-105 transition-transform">
-                <img src="/raj-logo.png" alt="Logo" className="h-10 md:h-12 object-contain" />
+                <img src="/raj-logo.png.png" alt="Logo" className="h-10 md:h-12 object-contain" />
               </div>
               <p className="text-sm font-medium leading-relaxed text-blue-200/60 max-w-sm">Empowering Minds, Shaping Futures. Join a community dedicated to academic excellence and holistic development in rural Bihar.</p>
               <div className="flex gap-4 mt-8">

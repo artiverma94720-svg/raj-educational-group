@@ -47,9 +47,7 @@ const callGemini = async (userPrompt, systemPrompt) => {
     throw error;
   }
 };
-  }
-};
-
+  
 // --- Custom CSS Injections for Premium Animations ---
 const CustomStyles = () => (
   <style dangerouslySetInnerHTML={{__html: `

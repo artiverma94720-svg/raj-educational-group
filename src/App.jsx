@@ -29,14 +29,13 @@ const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
 // --- API Helper Function with Exponential Backoff ---
 
 const callGemini = async (userPrompt, systemPrompt) => {
-  try {
-    const response = await fetch('/api/chat', {
-      method: 'POST',
+data.response    const response = await fetch('/api/chat', {
+      data.replymethod: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        message: `${systemPrompt}\n\n${userPrompt}`
+        userPrompt, systemPrompt
       }),
     });
 
@@ -45,7 +44,7 @@ const callGemini = async (userPrompt, systemPrompt) => {
     }
 
     const data = await response.json();
-    return data.response;
+    return data.reply;
   } catch (error) {
     console.error('AI Chat Error:', error);
     throw error;

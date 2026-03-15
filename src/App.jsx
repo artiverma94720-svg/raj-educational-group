@@ -50,7 +50,7 @@ const callGemini = async (userPrompt, systemPrompt) => {
     console.error('AI Chat Error:', error);
     throw error;
   }
-};};
+};
   
 // --- Custom CSS Injections for Premium Animations ---
 const CustomStyles = () => (
